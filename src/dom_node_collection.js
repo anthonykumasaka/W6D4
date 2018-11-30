@@ -1,20 +1,27 @@
 class DOMNodeCollection {
-    constructor(args) {
-      this.args = args;
+    constructor(nodes) {
+      this.nodes = nodes;
+    } 
+      
+    html(str) {
+      if (str === 'string') {
+        for (let i = 0; i < this.nodes.length; i += 1) {
+          let node = this.nodes[i];
+          node.innerHTML = html;  
+        }
+      } else {
+        return this.nodes[0].innerHTML; 
+      }
     }
-  
     
-  function domArray() {  
-    const domElements = []
-    for(let i = 0; i < args.length; i++){
-      domElements.push(this[i])
+    empty() {
+      
     }
-    return domElements;  
-  }
+    
 }
 
 
 
 
 
-module.export = DOMNodeCollection;
+export default DOMNodeCollection;

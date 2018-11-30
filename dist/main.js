@@ -1,5 +1,3 @@
-          DOMNodeCollection = require('../src/dom_node_collection.js')
-
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -88,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/dom_node_collection.js":
+/*!************************************!*\
+  !*** ./src/dom_node_collection.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass DOMNodeCollection {\n    constructor(nodes) {\n      this.nodes = nodes;\n    } \n      \n    html(str) {\n      if (str === 'string') {\n        for (let i = 0; i < this.nodes.length; i += 1) {\n          let node = this.nodes[i];\n          node.innerHTML = html;  \n        }\n      } else {\n        return this.nodes[0].innerHTML; \n      }\n    }\n    \n    empty() {\n      \n    }\n    \n}\n\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (DOMNodeCollection);\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("function $l (selector) {\n  return document.querySelectorAll(selector);\n}\n\nwindow.$l = $l; \n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom_node_collection.js */ \"./src/dom_node_collection.js\");\n \n\nfunction $l (selector) {\n  if (selector instanceof HTMLElement) {\n    const htmlArgs = Array.from(document.querySelectorAll(selector));\n    // return new DOMNodeCollection(htmlArgs);\n    return new _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]([selector]); \n  } else {\n    const htmlArgs = Array.from(document.querySelectorAll(selector));\n    let cssArgs = Array.from(document.getElementsByClassName(selector)); \n    return new _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](cssArgs); \n  }\n}\n\nwindow.$l = $l; \n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
